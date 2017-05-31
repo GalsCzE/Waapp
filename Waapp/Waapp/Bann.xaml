@@ -5,6 +5,11 @@
              Title="Bann">
   <ScrollView>
     <StackLayout Padding="10">
+            <Image x:Name="weatherr2" Source="" WidthRequest="15px" HeightRequest="15px"></Image>
+            <Label x:Name="stupne" Text="" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"></Label>
+            <ContentView>
+                <Label  Text="" />
+            </ContentView>
             <Label x:Name="titel" Text="" />
             <ContentView>
                 <Label  Text="" />
@@ -29,8 +34,6 @@
             <ContentView >
                 <Label  Text="" />
             </ContentView>
-            <Image Source=""></Image>
-            <Label x:Name="" Text=""></Label>
             <Button x:Name="delete" Text="Vymazat z databáze" Clicked="delete_Clicked"/>
             <Button x:Name="update" Text="Aktualizovat hodnoty" Clicked="update_Clicked" />
             <Button x:Name="back2" Text="Zpět" Clicked="back2_Clicked" />

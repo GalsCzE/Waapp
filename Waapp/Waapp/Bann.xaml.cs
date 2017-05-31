@@ -26,28 +26,24 @@ namespace Waapp
         private double windy;
         private double windyfinally;
 
-        private double tempefinally2;
-        private double tempe2;
-        private double windy2;
-        private double windyfinally2;
-
         public Bann(Weather w)
         {
             InitializeComponent();
 
             weather = w;
 
-            tempe2 = Convert.ToDouble(w.Temperature);
+            /*tempe2 = Convert.ToDouble(w.Temperature);
             tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
             tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;
 
             windy2 = Convert.ToDouble(w.Wind);
             windyfinally2 = (windy2 * 1.609344);
-            windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;
+            windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;*/
 
             titel.Text = w.Title;
-            temp.Text = tempefinally.ToString();
-            wind.Text = windyfinally.ToString();
+            temp.Text = w.Temperature; //tempefinally.ToString();
+            stupne.Text = w.Temperature;
+            wind.Text = w.Wind; //windyfinally.ToString();
             humidity.Text = w.Humidity;
             icon.Text = w.Icon;
             time.Text = w.Time;
@@ -72,7 +68,7 @@ namespace Waapp
             {
                 jop = wet.Sirka;
                 nope = wet.Delka;
-                await DisplayAlert("", jop + nope, "OK");
+                //await DisplayAlert("", jop + nope, "OK");
             }
             Weather weather2 = await Core2.GetWeather(jop, nope);
             weather2.ID = weather.ID;
@@ -90,9 +86,10 @@ namespace Waapp
             windyfinally = (windy * 1.609344);
             windyfinally = (double)((int)(windyfinally * 10.0)) / 10.0;
 
-            titel.Text = weather2.Title;
+                titel.Text = weather2.Title;
                 wind.Text = windyfinally.ToString() + " km/h";
                 temp.Text = tempefinally.ToString() + " °C";
+                stupne.Text = tempefinally.ToString() + " °C";
                 humidity.Text = weather2.Humidity + "% Vlhkost";
                 time.Text = weather2.Time;
                 icon.Text = weather2.Icon;

@@ -48,26 +48,16 @@
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,10" HorizontalOptions="Start">
+                    <Image x:Name="weatherr" Source=""></Image>
+                    <Label x:Name="cislo" Text=""></Label>
+                    <ContentView Style="{StaticResource fieldView}">
+                        <Label  Text="" Style="{StaticResource fieldStyle}" />
+                    </ContentView>
                     <Label x:Name="locationLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label  Text="" Style="{StaticResource fieldStyle}" />
-                    </ContentView>
                     <Label x:Name="tempLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label  Text="" Style="{StaticResource fieldStyle}" />
-                    </ContentView>
                     <Label x:Name="windLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label  Text="" Style="{StaticResource fieldStyle}" />
-                    </ContentView>
                     <Label x:Name="humidityLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label  Text="" Style="{StaticResource fieldStyle}" />
-                    </ContentView>
                     <Label x:Name="iconLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label  Text="" Style="{StaticResource fieldStyle}" />
-                    </ContentView>
                     <Label x:Name="timeLabel" Text="" Style="{StaticResource labelStyle}" />
                     <Label x:Name="sirkaLabel" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
                     <Label x:Name="delkaLabel" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
