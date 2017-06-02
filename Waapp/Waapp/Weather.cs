@@ -38,7 +38,7 @@ namespace Waapp
 
         public override string ToString()
         {
-            return string.Format(ID + " " + Title);
+            return string.Format(Title);
         }
     }
 

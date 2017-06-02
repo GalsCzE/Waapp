@@ -4,7 +4,7 @@
              x:Class="Waapp.Bann"
              Title="Bann">
   <ScrollView>
-    <StackLayout Padding="10">
+    <StackLayout Padding="10" HorizontalOptions="Center">
             <Label x:Name="titel" Text="" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
             <Image x:Name="weatherr2" Source="" WidthRequest="50" HeightRequest="50"></Image>
             <Label x:Name="stupne" Text="" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"></Label>
