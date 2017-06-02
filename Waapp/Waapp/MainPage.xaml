@@ -51,15 +51,15 @@
                     <Label x:Name="locationLabel" Text="" Style="{StaticResource labelStyle}" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" />
                     <Image x:Name="weatherr" Source="" WidthRequest="50" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
                     <Label x:Name="tempLabel" Text="" Style="{StaticResource labelStyle}"  FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
-                    <ContentView Style="{StaticResource fieldView}">
-                        <Label  Text="" Style="{StaticResource fieldStyle}" />
-                    </ContentView>
-                    <Label x:Name="windLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <Label x:Name="humidityLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <Label x:Name="timeLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <Label x:Name="iconLabel" Text="" Style="{StaticResource labelStyle}" TextColor="White"/>
-                    <Label x:Name="sirkaLabel" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
-                    <Label x:Name="delkaLabel" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
+                    <Image x:Name="speed" Source="" WidthRequest="50" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                    <Label x:Name="windLabel" Text="" Style="{StaticResource labelStyle}" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" />
+                    <Image x:Name="hum" Source="" WidthRequest="50" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                    <Label x:Name="humidityLabel" Text="" Style="{StaticResource labelStyle}" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" />
+                    <Label x:Name="last" FontSize="Micro" Text="" Style="{StaticResource labelStyle}" />
+                    <Label x:Name="timeLabel" FontSize="Micro" Text="" Style="{StaticResource labelStyle}" />
+                    <Label x:Name="iconLabel" FontSize="Micro" Text="" Style="{StaticResource labelStyle}" TextColor="White"/>
+                    <Label x:Name="sirkaLabel" FontSize="Micro" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
+                    <Label x:Name="delkaLabel" FontSize="Micro" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
                     <Button x:Name="datab" Text="Přidat do databáze" Clicked="datab_Clicked"/>
                     <Button x:Name="datap" Text="Přehled databáze" Clicked="datap_ClickedAsync" />
                 </StackLayout>

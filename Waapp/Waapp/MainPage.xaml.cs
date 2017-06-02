@@ -91,6 +91,9 @@ namespace Waapp
                     timeLabel.Text = weather.Time;
                     sirkaLabel.Text = weather.Sirka;
                     delkaLabel.Text = weather.Delka;
+                    speed.Source = "wind_speed.jpg";
+                    last.Text = "Poslední update:";
+                    hum.Source = "humidity.png";
                     // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
                     // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
                 }

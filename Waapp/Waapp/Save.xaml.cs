@@ -20,8 +20,6 @@ namespace Waapp
             InitializeComponent();
             we = App.Database.GetItemsAsync().Result;
             data.ItemsSource = we;
-
-
         }
 
         private void data_ItemSelected(object sender, SelectedItemChangedEventArgs e)

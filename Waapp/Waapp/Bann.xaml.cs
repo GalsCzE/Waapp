@@ -31,14 +31,6 @@ namespace Waapp
             InitializeComponent();
 
             weather = w;
-
-            /*tempe2 = Convert.ToDouble(w.Temperature);
-            tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
-            tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;
-
-            windy2 = Convert.ToDouble(w.Wind);
-            windyfinally2 = (windy2 * 1.609344);
-            windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;*/
             if (w.Icon == "clear-day")
             {
                 weatherr2.Source = "sun.png";
@@ -57,6 +49,10 @@ namespace Waapp
             wind.Text = w.Wind; //windyfinally.ToString();
             humidity.Text = w.Humidity;
             time.Text = w.Time;
+            Title = w.Title;
+            speed2.Source = "wind_speed.jpg";
+            hum2.Source = "humidity.png";
+            last2.Text = "Poslední update:";
             
         }
 
@@ -69,9 +65,6 @@ namespace Waapp
 
        private async void update_ClickedAsync()
         {
-            Debug.WriteLine("            ");
-            Debug.WriteLine("     AKTUALIZACE       ");
-            Debug.WriteLine("            ");
            // Debug.WriteLine(weather.Sirka + " " + weather.Delka);
             ws = App.Database.GetCategories(weather.Sirka, weather.Delka).Result;
             foreach (Weather wet in ws)
@@ -85,10 +78,6 @@ namespace Waapp
             await App.Database.SaveItemAsync(weather2);
 
             tempe = Convert.ToDouble(weather2.Temperature);
-            // }
-            //catch
-            //{
-            //await DisplayAlert("TEMPE2", tempe.ToString(), "OK");
             tempefinally = (5.0 / 9.0) * (tempe - 32.0);
             tempefinally = (double)((int)(tempefinally * 10.0)) / 10.0;
 
@@ -102,7 +91,6 @@ namespace Waapp
                 stupne.Text = tempefinally.ToString() + " °C";
                 humidity.Text = weather2.Humidity + "% Vlhkost";
                 time.Text = weather2.Time;
-                // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
                 // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
         }
 
