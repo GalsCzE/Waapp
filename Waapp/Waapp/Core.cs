@@ -16,6 +16,7 @@ namespace Waapp
             /* string key = "54b076df3448cc8f33ea4d7305761f54";
              string queryString = "http://api.openweathermap.org/data/2.5/weather?zip="
                  + zipCode + "&appid=" + key;*/
+            //https://api.darksky.net/forecast/05d457135af22713aeb4675fa0e889ff/50,14
             string key = "05d457135af22713aeb4675fa0e889ff";
             string queryString = "https://api.darksky.net/forecast/"+ key+ "/" + zipCodeEntry + "," + zipCodeEntry2;
 

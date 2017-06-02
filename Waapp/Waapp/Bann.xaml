@@ -5,17 +5,17 @@
              Title="Bann">
   <ScrollView>
     <StackLayout Padding="10">
-            <Image x:Name="weatherr2" Source="" WidthRequest="15px" HeightRequest="15px"></Image>
+            <Label x:Name="titel" Text="" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
+            <ContentView>
+                <Label  Text="" />
+            </ContentView>
+            <Image x:Name="weatherr2" Source="" WidthRequest="50" HeightRequest="50"></Image>
             <Label x:Name="stupne" Text="" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"></Label>
             <ContentView>
                 <Label  Text="" />
             </ContentView>
             <Label x:Name="titel" Text="" />
             <ContentView>
-                <Label  Text="" />
-            </ContentView>
-            <Label x:Name="temp" Text=""  />
-            <ContentView >
                 <Label  Text="" />
             </ContentView>
             <Label x:Name="wind" Text=""  />
@@ -25,10 +25,6 @@
             <Label x:Name="humidity" Text=""  />
             <ContentView >
                 <Label  Text=""/>
-            </ContentView>
-            <Label x:Name="icon" Text=""  />
-            <ContentView>
-                <Label  Text="" />
             </ContentView>
             <Label x:Name="time" Text=""/>
             <ContentView >

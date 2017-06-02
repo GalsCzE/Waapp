@@ -66,10 +66,22 @@ namespace Waapp
                 {
                     this.BindingContext = weather;
                     getWeatherBtn.Text = "Počasí";
-                    await DisplayAlert("Jmeno", zipCodeEntry.Text + " " + zipCodeEntry2.Text, "ok");
+                    await DisplayAlert("Jmeno", zipCodeEntry.Text + " " + zipCodeEntry2.Text, "OK");
                 }
                 else
                 {
+                    if (weather.Icon == "clear-day")
+                    {
+                        weatherr.Source = "sun.png";
+                    }
+                    else if (weather.Icon == "rain")
+                    {
+                        weatherr.Source = "rain.jpg";
+                    }
+                    else if (weather.Icon == "partly-cloudy-day")
+                    {
+                        weatherr.Source = "cloud_sun.png";
+                    }
                     getWeatherBtn.Text = "Hledat znova";
                     locationLabel.Text = weather.Title;
                     tempLabel.Text = tempefinally.ToString() + " °C";
@@ -128,7 +140,7 @@ namespace Waapp
             }
             else
             {
-                DisplayAlert("", "Jsou prázdné hodnoty, zkus vyhledat znovu.", "KEJ");
+                DisplayAlert("", "Jsou prázdné hodnoty, zkus vyhledat znovu.", "OK");
             }
 
         }

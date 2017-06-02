@@ -36,7 +36,7 @@
                         <Entry x:Name="zipCodeEntry2" />
                     </StackLayout>
                     <StackLayout Padding="0,0,0,10" VerticalOptions="End">
-                        <Button x:Name="getWeatherBtn" Text="Get Weather" WidthRequest="185" BorderWidth="1" >
+                        <Button x:Name="getWeatherBtn" Text="Počasí" WidthRequest="185" BorderWidth="1" >
                             <!-- Set iOS colors; use defaults on other platforms -->
                             <Button.TextColor>
                                 <OnPlatform x:TypeArguments="Color" iOS="White"/>
@@ -48,17 +48,16 @@
                     </StackLayout>
                 </StackLayout>
                 <StackLayout Padding="10,10,10,10" HorizontalOptions="Start">
-                    <Image x:Name="weatherr" Source=""></Image>
-                    <Label x:Name="cislo" Text=""></Label>
+                    <Label x:Name="locationLabel" Text="" Style="{StaticResource labelStyle}" FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black" />
+                    <Image x:Name="weatherr" Source="" WidthRequest="50" HeightRequest="50" VerticalOptions="Center" HorizontalOptions="Center"></Image>
+                    <Label x:Name="tempLabel" Text="" Style="{StaticResource labelStyle}"  FontSize="Large" FontFamily="serif" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" TextColor="Black"/>
                     <ContentView Style="{StaticResource fieldView}">
                         <Label  Text="" Style="{StaticResource fieldStyle}" />
                     </ContentView>
-                    <Label x:Name="locationLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <Label x:Name="tempLabel" Text="" Style="{StaticResource labelStyle}" />
                     <Label x:Name="windLabel" Text="" Style="{StaticResource labelStyle}" />
                     <Label x:Name="humidityLabel" Text="" Style="{StaticResource labelStyle}" />
-                    <Label x:Name="iconLabel" Text="" Style="{StaticResource labelStyle}" />
                     <Label x:Name="timeLabel" Text="" Style="{StaticResource labelStyle}" />
+                    <Label x:Name="iconLabel" Text="" Style="{StaticResource labelStyle}" TextColor="White"/>
                     <Label x:Name="sirkaLabel" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
                     <Label x:Name="delkaLabel" TextColor="White" Text="" Style="{StaticResource labelStyle}" />
                     <Button x:Name="datab" Text="Přidat do databáze" Clicked="datab_Clicked"/>

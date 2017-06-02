@@ -39,13 +39,23 @@ namespace Waapp
             windy2 = Convert.ToDouble(w.Wind);
             windyfinally2 = (windy2 * 1.609344);
             windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;*/
+            if (w.Icon == "clear-day")
+            {
+                weatherr2.Source = "sun.png";
+            }
+            else if (w.Icon == "rain")
+            {
+                weatherr2.Source = "rain.jpg";
+            }
+            else if (w.Icon == "partly-cloudy-day")
+            {
+                weatherr2.Source = "cloud_sun.png";
+            }
 
             titel.Text = w.Title;
-            temp.Text = w.Temperature; //tempefinally.ToString();
             stupne.Text = w.Temperature;
             wind.Text = w.Wind; //windyfinally.ToString();
             humidity.Text = w.Humidity;
-            icon.Text = w.Icon;
             time.Text = w.Time;
             
         }
@@ -88,11 +98,10 @@ namespace Waapp
 
                 titel.Text = weather2.Title;
                 wind.Text = windyfinally.ToString() + " km/h";
-                temp.Text = tempefinally.ToString() + " °C";
+                stupne.Text = tempefinally.ToString() + " °C";
                 stupne.Text = tempefinally.ToString() + " °C";
                 humidity.Text = weather2.Humidity + "% Vlhkost";
                 time.Text = weather2.Time;
-                icon.Text = weather2.Icon;
                 // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
                 // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
         }
@@ -107,6 +116,7 @@ namespace Waapp
         private void back2_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Save());
+            DisplayAlert("","Během několikati sekund se počasí aktualizuje.","OK");
         }
     }
 
