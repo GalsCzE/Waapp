@@ -25,7 +25,7 @@ namespace Waapp
         private double tempe;
         private double windy;
         private double windyfinally;
-        private double tempe2;
+        private double tempe3;
 
         public Bann(Weather w)
         {
@@ -44,24 +44,34 @@ namespace Waapp
             {
                 weatherr2.Source = ImageSource.FromFile("cloud_sun.png");
             }
+            else if (weather.Icon == "cloudy")
+            {
+                weatherr2.Source = ImageSource.FromFile("cloud.png");
+            }
 
-            tempe2 = Convert.ToDouble(weather2.Temperature);
+            //tempe3 = Convert.ToDouble(w.Temperature);
+            /*tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
+            tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;*/
 
-            if (tempe2 >= 26.0)
-            {
-                stupne.TextColor = Color.Red;
-            }
-            else if (tempefinally <= 9.0)
-            {
-                stupne.TextColor = Color.Blue;
-            }
-            else
-            {
-                stupne.TextColor = Color.Black;
-            }
+            /*windy2 = Convert.ToDouble(w.Wind);
+            windyfinally2 = (windy * 1.609344);
+            windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;*/
+
+            /* if (tempe3 >= 26.0)
+             {
+                 stupne.TextColor = Color.Red;
+             }
+             else if (tempe3 <= 9.0)
+             {
+                 stupne.TextColor = Color.Blue;
+             }
+             else
+             {
+                 stupne.TextColor = Color.Black;
+             }*/
 
             titel.Text = w.Title;
-            stupne.Text = w.Temperature;
+            stupne.Text = w.Temperature;//tempefinally2.ToString();
             wind.Text = w.Wind; //windyfinally.ToString();
             humidity.Text = w.Humidity;
             time.Text = w.Time;
@@ -114,7 +124,9 @@ namespace Waapp
             //update_ClickedAsync();
             update_ClickedAsync();
             Navigation.PushAsync(new Save());
-            DisplayAlert("", "Během několikati sekund se počasí aktualizuje.", "OK");
+            //DisplayAlert("", "Během několikati sekund se počasí aktualizuje.", "OK");
+            //Za tímhle se to vypínalo bez důvodu OPRAVIT!!!
+
         }
 
         private void back2_Clicked(object sender, EventArgs e)

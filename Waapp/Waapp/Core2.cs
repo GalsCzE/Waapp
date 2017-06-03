@@ -10,6 +10,14 @@ namespace Waapp
     {
         public static string tempe;
         public static double tempnumber;
+        public static string t;
+        public static string w;
+        public static string h;
+        private static double tempe2;
+        private static double tempefinally2;
+        private static double windyfinally2;
+        private static double windy2;
+
         public static async Task<Weather> GetWeather(string zipCodeEntry, string zipCodeEntry2)
         {
             //Sign up for a free API key at http://openweathermap.org/appid
@@ -20,6 +28,18 @@ namespace Waapp
             string queryString = "https://api.darksky.net/forecast/" + key + "/" + zipCodeEntry + "," + zipCodeEntry2;
 
             var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
+            t = (string)results["currently"]["temperature"];
+            w = (string)results["currently"]["windSpeed"];
+            h = (string)results["currently"]["humidity"];
+
+            tempe2 = Convert.ToDouble(t);
+            tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
+            tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;
+
+            windy2 = Convert.ToDouble(w);
+            windyfinally2 = (windy2 * 1.609344);
+            windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;
+
             if (results["currently"] != null)
             {
                 /*tempe = (string)results["currently"]["temperature"];
@@ -28,9 +48,9 @@ namespace Waapp
                 Weather weather2 = new Weather()
                 {
                     Title = (string)results["timezone"],
-                    Temperature = (string)results["currently"]["temperature"],
-                    Wind = (string)results["currently"]["windSpeed"],
-                    Humidity = (string)results["currently"]["humidity"],
+                    Temperature = tempefinally2.ToString() + " °C",
+                    Wind = windy2.ToString() + " km/h",
+                    Humidity = h + "% Vlhkost",
                     Icon = (string)results["currently"]["icon"],
                     Sirka = (string)results["latitude"],
                     Delka = (string)results["longitude"],

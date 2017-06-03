@@ -72,15 +72,19 @@ namespace Waapp
                 {
                     if (weather.Icon == "clear-day")
                     {
-                        weatherr.Source = "sun.png";
+                        weatherr.Source = ImageSource.FromFile("sun.png");
                     }
                     else if (weather.Icon == "rain")
                     {
-                        weatherr.Source = "rain.jpg";
+                        weatherr.Source = ImageSource.FromFile("rain.jpg");
                     }
                     else if (weather.Icon == "partly-cloudy-day")
                     {
-                        weatherr.Source = "cloud_sun.png";
+                        weatherr.Source = ImageSource.FromFile("cloud_sun.png");
+                    }
+                    else if (weather.Icon == "cloudy")
+                    {
+                        weatherr.Source = ImageSource.FromFile("cloud.png");
                     }
 
                     if (tempefinally >= 26.0)
@@ -105,9 +109,9 @@ namespace Waapp
                     timeLabel.Text = weather.Time;
                     sirkaLabel.Text = weather.Sirka;
                     delkaLabel.Text = weather.Delka;
-                    speed.Source = "wind_speed.jpg";
+                    speed.Source = ImageSource.FromFile("wind_speed.jpg");
                     last.Text = "Poslední update:";
-                    hum.Source = "humidity.png";
+                    hum.Source = ImageSource.FromFile("humidity.png");
                     // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
                     // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
                 }
