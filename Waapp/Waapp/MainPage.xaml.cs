@@ -83,7 +83,7 @@ namespace Waapp
                         weatherr.Source = "cloud_sun.png";
                     }
 
-                   /* if (tempefinally >= 26.0)
+                    if (tempefinally >= 26.0)
                     {
                         tempLabel.TextColor = Color.Red ;
                     }
@@ -94,7 +94,7 @@ namespace Waapp
                     else
                     {
                         tempLabel.TextColor = Color.Black;
-                    }*/
+                    }
 
                     getWeatherBtn.Text = "Hledat znova";
                     locationLabel.Text = weather.Title;
