@@ -25,6 +25,7 @@ namespace Waapp
         private double tempe;
         private double windy;
         private double windyfinally;
+        private double tempe2;
 
         public Bann(Weather w)
         {
@@ -33,15 +34,30 @@ namespace Waapp
             weather = w;
             if (w.Icon == "clear-day")
             {
-                weatherr2.Source = "sun.png";
+                weatherr2.Source = ImageSource.FromFile("sun.png");
             }
             else if (w.Icon == "rain")
             {
-                weatherr2.Source = "rain.jpg";
+                weatherr2.Source = ImageSource.FromFile("rain.jpg");
             }
             else if (w.Icon == "partly-cloudy-day")
             {
-                weatherr2.Source = "cloud_sun.png";
+                weatherr2.Source = ImageSource.FromFile("cloud_sun.png");
+            }
+
+            tempe2 = Convert.ToDouble(weather2.Temperature);
+
+            if (tempe2 >= 26.0)
+            {
+                stupne.TextColor = Color.Red;
+            }
+            else if (tempefinally <= 9.0)
+            {
+                stupne.TextColor = Color.Blue;
+            }
+            else
+            {
+                stupne.TextColor = Color.Black;
             }
 
             titel.Text = w.Title;
@@ -50,8 +66,8 @@ namespace Waapp
             humidity.Text = w.Humidity;
             time.Text = w.Time;
             Title = w.Title;
-            speed2.Source = "wind_speed.jpg";
-            hum2.Source = "humidity.png";
+            speed2.Source = ImageSource.FromFile("wind_speed.jpg");
+            hum2.Source = ImageSource.FromFile("humidity.png");
             last2.Text = "Poslední update:";
             
         }
@@ -88,7 +104,6 @@ namespace Waapp
                 titel.Text = weather2.Title;
                 wind.Text = windyfinally.ToString() + " km/h";
                 stupne.Text = tempefinally.ToString() + " °C";
-                stupne.Text = tempefinally.ToString() + " °C";
                 humidity.Text = weather2.Humidity + "% Vlhkost";
                 time.Text = weather2.Time;
                 // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
@@ -99,12 +114,12 @@ namespace Waapp
             //update_ClickedAsync();
             update_ClickedAsync();
             Navigation.PushAsync(new Save());
+            DisplayAlert("", "Během několikati sekund se počasí aktualizuje.", "OK");
         }
 
         private void back2_Clicked(object sender, EventArgs e)
         {
             Navigation.PushAsync(new Save());
-            DisplayAlert("","Během několikati sekund se počasí aktualizuje.","OK");
         }
     }
 
