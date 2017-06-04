@@ -127,14 +127,15 @@ namespace Waapp
                 {
                     Weather v = new Weather();
                     v.Title = locationLabel.Text;
-                    v.Temperature = tempLabel.Text;
-                    v.Wind = windLabel.Text;
+                    v.Temperature = tempefinally.ToString();
+                    v.Wind = windyfinally.ToString();
                     v.Humidity = humidityLabel.Text;
                     v.Icon = iconLabel.Text;
                     v.Time = timeLabel.Text;
                     v.Sirka = sirkaLabel.Text;
                     v.Delka = delkaLabel.Text;
                     App.Database.SaveItemAsync(v);
+                    DisplayAlert("", v.Sirka + v.Delka, "OK");
                 } else
                 {
                     foreach (Weather w in weathers)
@@ -147,12 +148,15 @@ namespace Waapp
                         {
                             Weather v = new Weather();
                             v.Title = locationLabel.Text;
-                            v.Temperature = tempLabel.Text;
-                            v.Wind = windLabel.Text;
+                            v.Temperature = tempefinally.ToString();
+                            v.Wind = windyfinally.ToString();
                             v.Humidity = humidityLabel.Text;
                             v.Icon = iconLabel.Text;
                             v.Time = timeLabel.Text;
+                            v.Sirka = sirkaLabel.Text;
+                            v.Delka = delkaLabel.Text;
                             App.Database.SaveItemAsync(v);
+                            DisplayAlert("", v.Sirka + v.Delka, "OK");
                         }
                     }
                 }

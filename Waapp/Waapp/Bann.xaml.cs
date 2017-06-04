@@ -49,7 +49,7 @@ namespace Waapp
                 weatherr2.Source = ImageSource.FromFile("cloud.png");
             }
 
-            //tempe3 = Convert.ToDouble(w.Temperature);
+            tempe3 = Convert.ToDouble(w.Temperature);
             /*tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
             tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;*/
 
@@ -57,7 +57,7 @@ namespace Waapp
             windyfinally2 = (windy * 1.609344);
             windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;*/
 
-            /* if (tempe3 >= 26.0)
+            if (tempe3 >= 26.0)
              {
                  stupne.TextColor = Color.Red;
              }
@@ -68,11 +68,11 @@ namespace Waapp
              else
              {
                  stupne.TextColor = Color.Black;
-             }*/
+             }
 
             titel.Text = w.Title;
-            stupne.Text = w.Temperature;//tempefinally2.ToString();
-            wind.Text = w.Wind; //windyfinally.ToString();
+            stupne.Text = w.Temperature + " °C";//tempefinally2.ToString();
+            wind.Text = w.Wind + " km/h"; //windyfinally.ToString();
             humidity.Text = w.Humidity;
             time.Text = w.Time;
             Title = w.Title;
@@ -97,34 +97,29 @@ namespace Waapp
             {
                 jop = wet.Sirka;
                 nope = wet.Delka;
-                //await DisplayAlert("", jop + nope, "OK");
+               //await DisplayAlert("", jop + nope, "OK");
             }
             Weather weather2 = await Core2.GetWeather(jop, nope);
             weather2.ID = weather.ID;
             await App.Database.SaveItemAsync(weather2);
 
-            tempe = Convert.ToDouble(weather2.Temperature);
-            tempefinally = (5.0 / 9.0) * (tempe - 32.0);
-            tempefinally = (double)((int)(tempefinally * 10.0)) / 10.0;
-
-            windy = Convert.ToDouble(weather2.Wind);
-            windyfinally = (windy * 1.609344);
-            windyfinally = (double)((int)(windyfinally * 10.0)) / 10.0;
-
-                titel.Text = weather2.Title;
+               /* titel.Text = weather2.Title;
                 wind.Text = windyfinally.ToString() + " km/h";
                 stupne.Text = tempefinally.ToString() + " °C";
                 humidity.Text = weather2.Humidity + "% Vlhkost";
-                time.Text = weather2.Time;
+                time.Text = weather2.Time;*/
                 // await DisplayAlert("Jmeno", weather.Title + " " + weather.Temperature + " " + weather.Wind + " " + weather.Humidity, "ok");
         }
 
         private void update_Clicked(object sender, EventArgs e)
         {
-            //update_ClickedAsync();
             update_ClickedAsync();
-            Navigation.PushAsync(new Save());
-            //DisplayAlert("", "Během několikati sekund se počasí aktualizuje.", "OK");
+            //update_ClickedAsync();
+            DisplayAlert("", "Během několikati sekund se počasí aktualizuje.", "OK");
+            Navigation.PushAsync(new MainPage());
+            /*Debug.WriteLine("");
+            Debug.WriteLine("Za tímhle se to vypínalo bez důvodu OPRAVIT!!!");
+            Debug.WriteLine("");*/
             //Za tímhle se to vypínalo bez důvodu OPRAVIT!!!
 
         }

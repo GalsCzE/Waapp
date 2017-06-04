@@ -28,28 +28,29 @@ namespace Waapp
             string queryString = "https://api.darksky.net/forecast/" + key + "/" + zipCodeEntry + "," + zipCodeEntry2;
 
             var results = await DataService.getDataFromService(queryString).ConfigureAwait(false);
-            t = (string)results["currently"]["temperature"];
-            w = (string)results["currently"]["windSpeed"];
-            h = (string)results["currently"]["humidity"];
 
-            tempe2 = Convert.ToDouble(t);
-            tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
-            tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;
-
-            windy2 = Convert.ToDouble(w);
-            windyfinally2 = (windy2 * 1.609344);
-            windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;
 
             if (results["currently"] != null)
             {
+                t = (string)results["currently"]["temperature"];
+                w = (string)results["currently"]["windSpeed"];
+                h = (string)results["currently"]["humidity"];
+
+                tempe2 = Convert.ToDouble(t);
+                tempefinally2 = (5.0 / 9.0) * (tempe2 - 32.0);
+                tempefinally2 = (double)((int)(tempefinally2 * 10.0)) / 10.0;
+
+                windy2 = Convert.ToDouble(w);
+                windyfinally2 = (windy2 * 1.609344);
+                windyfinally2 = (double)((int)(windyfinally2 * 10.0)) / 10.0;
                 /*tempe = (string)results["currently"]["temperature"];
                 tempnumber = Int32.Parse(tempe) - 17;*/
 
                 Weather weather2 = new Weather()
                 {
                     Title = (string)results["timezone"],
-                    Temperature = tempefinally2.ToString() + " °C",
-                    Wind = windy2.ToString() + " km/h",
+                    Temperature = tempefinally2.ToString(),
+                    Wind = windy2.ToString(),
                     Humidity = h + "% Vlhkost",
                     Icon = (string)results["currently"]["icon"],
                     Sirka = (string)results["latitude"],
